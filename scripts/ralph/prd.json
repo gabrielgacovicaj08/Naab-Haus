@@ -13,7 +13,7 @@
         "App.jsx renders a root <main> with placeholder NaabHaus text",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-002",
@@ -28,7 +28,7 @@
         "Selected language persists in localStorage",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-003",

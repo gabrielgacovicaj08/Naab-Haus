@@ -1,3 +1,40 @@
 # Ralph Progress Log
 Started: Tue Mar  3 15:47:03 CST 2026
 ---
+
+## Codebase Patterns
+- Project root: `/c/Users/gabri/desktop/naabhaus` (React + Vite, ESM)
+- CSS vars defined in `src/index.css` under `:root`; fonts loaded via `<link>` in `index.html`
+- Lint: `npm run lint` (ESLint flat config, no TypeScript — `.jsx` files only)
+- Branch: `ralph/sardegna-landing` (created from `main`)
+- **ESLint `react-refresh/only-export-components` rule**: Component files (`.jsx`) must ONLY export React components. Hooks and context instances must go in separate files (`.js` preferred for non-components). Pattern: `context/languageContext.js` (context instance) + `context/LanguageContext.jsx` (provider component) + `hooks/useTranslation.js` (hook).
+- Translations: `src/translations.js` exports `{ en: {...}, it: {...} }`. Use `useTranslation()` hook which returns `{ t(keyPath), lang, toggleLang }`. Key paths are dot-separated strings like `'hero.headline'`.
+- Language persistence: stored in `localStorage` under key `'naabhaus-lang'`.
+
+## 2026-03-04 - US-001
+- Implemented foundational design tokens and global styles
+- Files changed:
+  - `index.html`: added Google Fonts preconnect + stylesheet link (Playfair Display + Inter)
+  - `src/index.css`: replaced Vite defaults with CSS variables (color palette), global reset (box-sizing, font-smoothing, scroll-behavior: smooth), base typography
+  - `src/App.jsx`: replaced Vite boilerplate with minimal `<main><p>NaabHaus</p></main>`
+  - `src/App.css`: cleared Vite boilerplate
+- **Learnings for future iterations:**
+  - All color/font tokens are in `src/index.css` `:root` — reference via `var(--color-*)` and `var(--font-*)`
+  - `--section-padding: 6rem 2rem` defined for consistent section spacing
+  - ESLint `no-unused-vars` rule ignores vars matching `^[A-Z_]` (uppercase)
+  - No TypeScript — plain `.jsx` files throughout
+---
+
+## 2026-03-04 - US-002
+- Implemented LanguageContext, useTranslation hook, and EN/IT translations
+- Files changed:
+  - `src/translations.js`: all EN and IT strings for every section (nav, hero, features, gallery, experience, location, CTA, footer)
+  - `src/context/languageContext.js`: bare `createContext` instance (non-component file)
+  - `src/context/LanguageContext.jsx`: `LanguageProvider` component with `lang` state + localStorage persistence
+  - `src/hooks/useTranslation.js`: `useTranslation()` hook returning `{ t, lang, toggleLang }`
+  - `src/App.jsx`: wrapped with `LanguageProvider`, added minimal nav with EN/IT toggle button, uses `t()` for hero text
+- **Learnings for future iterations:**
+  - `react-refresh/only-export-components` requires splitting: context instance in `.js`, provider component in `.jsx`, hook in separate `.js`
+  - `t('section.key')` resolves dot-separated paths into the translations object
+  - Toggle shows the OTHER language label (when lang=en, button shows "IT")
+---
