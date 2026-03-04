@@ -145,7 +145,7 @@
         "No console errors in production build (vite build passes)",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     }
   ]
 }

@@ -10,6 +10,7 @@ Started: Tue Mar  3 15:47:03 CST 2026
 - **ESLint `react-refresh/only-export-components` rule**: Component files (`.jsx`) must ONLY export React components. Hooks and context instances must go in separate files (`.js` preferred for non-components). Pattern: `context/languageContext.js` (context instance) + `context/LanguageContext.jsx` (provider component) + `hooks/useTranslation.js` (hook).
 - Translations: `src/translations.js` exports `{ en: {...}, it: {...} }`. Use `useTranslation()` hook which returns `{ t(keyPath), lang, toggleLang }`. Key paths are dot-separated strings like `'hero.headline'`.
 - Language persistence: stored in `localStorage` under key `'naabhaus-lang'`.
+- **Windows case-insensitive FS + Rollup**: On Windows, `import X from './context/LanguageContext'` can resolve to `languageContext.js` (`.js` beats `.jsx`). Use explicit extensions for same-name-different-case files: `'./context/LanguageContext.jsx'`.
 
 ## 2026-03-04 - US-001
 - Implemented foundational design tokens and global styles
@@ -126,4 +127,20 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - `react-refresh/only-export-components` requires splitting: context instance in `.js`, provider component in `.jsx`, hook in separate `.js`
   - `t('section.key')` resolves dot-separated paths into the translations object
   - Toggle shows the OTHER language label (when lang=en, button shows "IT")
+---
+
+## 2026-03-04 - US-010
+- Implemented scroll animations & final polish: reusable FadeIn component, scroll progress indicator, hero parallax, consistent section spacing, production build fix
+- Files changed:
+  - `src/components/FadeIn.jsx` + `FadeIn.css`: reusable IntersectionObserver fade-in wrapper component with optional delay prop
+  - `src/components/ScrollProgress.jsx` + `ScrollProgress.css`: fixed 3px turquoise progress bar at top of page driven by scroll position
+  - `src/components/Hero.jsx`: added parallax effect — separate `.hero__parallax` wrapper div translates via scroll listener; CSS scale animation stays on inner `.hero__bg` to avoid transform conflicts
+  - `src/components/Hero.css`: added `.hero__parallax` with `inset: -30% 0` to give parallax room without showing edges
+  - `src/components/Footer.css`: updated CTA banner padding from 5rem to 6rem (min 6rem per acceptance criteria)
+  - `src/App.jsx`: added `<ScrollProgress />`, fixed `LanguageContext` import to explicit `.jsx` extension to resolve Windows case-insensitive FS Rollup build failure
+- **Learnings for future iterations:**
+  - Windows case-insensitive FS causes Rollup to resolve `./context/LanguageContext` → `languageContext.js` (`.js` wins over `.jsx`). Fix: use explicit `.jsx` extension in the import: `'./context/LanguageContext.jsx'`
+  - Parallax + CSS animation can't both use `transform` on same element. Solution: nest — outer div handles JS parallax `translateY`, inner div handles CSS scale animation
+  - `inset: -30% 0` on a parallax container extends it 30% above/below the hero (clipped by `overflow: hidden`) giving room for scroll movement without revealing edges
+  - FadeIn component pattern: `opacity: 0; transform: translateY(28px)` initial state, `IntersectionObserver` adds `--visible` class, `transition` animates to final state; `observer.disconnect()` so it fires once
 ---
