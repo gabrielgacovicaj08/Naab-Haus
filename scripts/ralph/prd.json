@@ -1,0 +1,151 @@
+{
+  "branchName": "ralph/sardegna-landing",
+  "bookingUrl": "#",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Base setup — design system, fonts, color palette, global styles",
+      "description": "As a developer, I need the foundational design tokens and global styles so that all subsequent stories share a cohesive visual language.",
+      "acceptanceCriteria": [
+        "Color palette defined as CSS variables: sandy white #FAF7F2, turquoise #4ECDC4, warm sand #E8D5B7, deep sea #1A3A4A, soft stone #8B7355",
+        "Google Fonts loaded: Playfair Display (headings) + Inter (body)",
+        "Global reset and base styles applied (box-sizing, font smoothing, scroll-behavior: smooth)",
+        "App.jsx renders a root <main> with placeholder NaabHaus text",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-002",
+      "title": "Language context — EN/IT toggle",
+      "description": "As a visitor, I want to switch between English and Italian so that I can read the site in my preferred language.",
+      "acceptanceCriteria": [
+        "LanguageContext React context created with lang state ('en' | 'it')",
+        "useTranslation hook or helper that returns the correct string given a key and current lang",
+        "translations.js file with EN and IT strings for every section (placeholder copy)",
+        "Toggle button (EN / IT) visible in the navbar, switches language globally",
+        "All existing text on the page switches language instantly without page reload",
+        "Selected language persists in localStorage",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-003",
+      "title": "Navbar",
+      "description": "As a visitor, I want a clean top navigation bar so that I can jump to any section and switch language.",
+      "acceptanceCriteria": [
+        "Fixed/sticky navbar with logo text NaabHaus on the left",
+        "Nav links: Home, Features, Gallery, Experience, Location, Book Now",
+        "Clicking a nav link smoothly scrolls to the corresponding section",
+        "Language toggle (EN/IT) on the right",
+        "Navbar background transitions from transparent (over hero) to white/frosted on scroll",
+        "Mobile: collapses to hamburger menu",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-004",
+      "title": "Hero section",
+      "description": "As a visitor, I want to be immediately captivated by a stunning hero so that I feel emotionally drawn to the property.",
+      "acceptanceCriteria": [
+        "Full-viewport hero with a large placeholder image (use a high-quality Unsplash URL for Sardegna/Mediterranean)",
+        "Subtle dark overlay for text legibility",
+        "Headline in Playfair Display (EN: 'Your home by the Sardinian sea' / IT: 'La tua casa sul mare di Sardegna')",
+        "Subheadline with atmosphere text (EN/IT)",
+        "Primary CTA button linking to bookingUrl placeholder",
+        "Fade-in animation on load (headline, subheadline, CTA stagger in)",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-005",
+      "title": "Features/highlights section",
+      "description": "As a visitor, I want to see the property's key features at a glance so that I understand what makes it special.",
+      "acceptanceCriteria": [
+        "Section with heading 'The home' / 'La casa'",
+        "Grid of 6 feature cards, each with an icon (emoji or SVG), title, and short description (EN/IT): Sleeps 8, Private pool, Sea view terrace, 200m from beach, Full kitchen, Free parking",
+        "Cards fade in on scroll using Intersection Observer",
+        "Responsive: 3 cols desktop, 2 cols tablet, 1 col mobile",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-006",
+      "title": "Gallery section",
+      "description": "As a visitor, I want to browse beautiful photos of the property and surroundings so that I can imagine myself there.",
+      "acceptanceCriteria": [
+        "Section with heading 'Gallery' / 'Galleria'",
+        "Masonry or asymmetric CSS grid layout with 8-10 placeholder images (Unsplash: Sardegna interiors, sea, terrace, beach)",
+        "Images have a subtle hover zoom effect (transform scale + overflow hidden)",
+        "Lightbox: clicking an image opens a full-screen overlay with the image and close button (press Escape or click X to close)",
+        "Fade-in on scroll for the grid",
+        "Responsive: fluid grid that collapses gracefully on mobile",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-007",
+      "title": "Experience/lifestyle section",
+      "description": "As a visitor, I want to feel the atmosphere of staying at the property so that I emotionally connect with the place.",
+      "acceptanceCriteria": [
+        "Section with 3 alternating image + text blocks",
+        "Block 1: 'Mornings on the terrace' / 'Mattine in terrazza' — image left, text right",
+        "Block 2: 'Sunsets by the sea' / 'Tramonti sul mare' — text left, image right",
+        "Block 3: 'The charm of Sardinia' / 'Il fascino della Sardegna' — image left, text right",
+        "Each block has a Playfair Display heading, atmospheric paragraph (EN/IT)",
+        "Slide-in animation on scroll (image and text from opposite sides)",
+        "Responsive: stacks vertically on mobile",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-008",
+      "title": "Location section",
+      "description": "As a visitor, I want to know where the property is and what's nearby so that I can plan my trip.",
+      "acceptanceCriteria": [
+        "Section with heading 'Where we are' / 'Dove siamo'",
+        "Short atmospheric description of the area (EN/IT placeholder copy)",
+        "List of nearby highlights with distances: Beach 200m, Nearest village 3km, Olbia Airport 45 min, Porto Cervo 30 min",
+        "Embedded Google Maps iframe (placeholder coords: 41.1N, 9.5E — generic Sardegna)",
+        "Fade-in on scroll",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-009",
+      "title": "Footer + booking CTA",
+      "description": "As a visitor, I want a clear final call-to-action and footer so that I know how to book and can find contact info.",
+      "acceptanceCriteria": [
+        "Full-width CTA banner above footer with booking button linking to bookingUrl",
+        "CTA banner EN: 'Ready to escape?' / IT: 'Pronto a fuggire?' with button 'Book on Airbnb' / 'Prenota su Airbnb'",
+        "CTA banner uses turquoise or deep sea background color",
+        "Footer with: logo, short tagline (EN/IT), nav links, email placeholder, copyright",
+        "Footer background: deep sea #1A3A4A, text white",
+        "Lint passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "US-010",
+      "title": "Scroll animations & final polish",
+      "description": "As a visitor, I want smooth, subtle animations throughout the page so that the experience feels refined and luxurious.",
+      "acceptanceCriteria": [
+        "Reusable FadeIn component using Intersection Observer that wraps any section child",
+        "Subtle parallax effect on hero image",
+        "Scroll progress indicator (thin turquoise line at top of page)",
+        "All sections have consistent generous vertical spacing (min 6rem padding)",
+        "Full mobile responsiveness verified across all sections",
+        "No console errors in production build (vite build passes)",
+        "Lint passes"
+      ],
+      "passes": false
+    }
+  ]
+}
