@@ -8,6 +8,13 @@
   overflow: hidden;
 }
 
+/* Parallax wrapper — extends above/below hero to allow vertical movement */
+.hero__parallax {
+  position: absolute;
+  inset: -30% 0;
+  will-change: transform;
+}
+
 .hero__bg {
   position: absolute;
   inset: 0;
