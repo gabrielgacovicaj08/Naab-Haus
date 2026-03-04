@@ -1,15 +1,13 @@
 import './App.css'
 import { LanguageProvider } from './context/LanguageContext'
-import { useTranslation } from './hooks/useTranslation'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Gallery from './components/Gallery'
 import Experience from './components/Experience'
+import Location from './components/Location'
 
 function AppContent() {
-  const { t } = useTranslation()
-
   return (
     <>
       <Navbar />
@@ -18,9 +16,7 @@ function AppContent() {
         <Features />
         <Gallery />
         <Experience />
-        <section id="location" style={{ padding: 'var(--section-padding)' }}>
-          <h2>{t('location.heading')}</h2>
-        </section>
+        <Location />
       </main>
     </>
   )
