@@ -86,7 +86,7 @@
         "Responsive: fluid grid that collapses gracefully on mobile",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-007",

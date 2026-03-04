@@ -64,6 +64,19 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - Stagger effect achieved purely via `transitionDelay` set inline before adding the visible class — no JS animation library needed
 ---
 
+## 2026-03-04 - US-006
+- Implemented Gallery section with masonry CSS columns layout, lightbox, and scroll fade-in
+- Files changed:
+  - `src/components/Gallery.jsx`: 9 Unsplash placeholder images, CSS `columns` masonry layout, IntersectionObserver fade-in on grid, lightbox state with Escape key handler, hover zoom
+  - `src/components/Gallery.css`: `columns: 3` masonry, `break-inside: avoid` on items, hover `scale(1.06)`, fixed lightbox overlay with `galleryFadeIn` animation, responsive (3→2→1 cols)
+  - `src/App.jsx`: replaced `#gallery` stub section with `<Gallery />`
+- **Learnings for future iterations:**
+  - CSS `columns` property gives natural masonry layout without JS; use `break-inside: avoid` + `margin-bottom` on items (not `gap`)
+  - Lightbox pattern: `useState(null | imageObj)`, `onClick` on overlay closes, `e.stopPropagation()` on inner img prevents close on img click; Escape via `keydown` listener added/removed based on lightbox state
+  - `warm-sand` (`#E8D5B7`) used as gallery section background to differentiate from adjacent sandy-white features section
+  - Background manual browser verification needed (no browser MCP tools available)
+---
+
 ## 2026-03-04 - US-002
 - Implemented LanguageContext, useTranslation hook, and EN/IT translations
 - Files changed:
