@@ -43,7 +43,7 @@
         "Mobile: collapses to hamburger menu",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-004",

@@ -25,6 +25,20 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - No TypeScript — plain `.jsx` files throughout
 ---
 
+## 2026-03-04 - US-003
+- Implemented sticky Navbar with transparent→frosted scroll transition and mobile hamburger menu
+- Files changed:
+  - `src/components/Navbar.jsx`: Navbar component with scroll-aware class, smooth-scroll links, hamburger toggle, EN/IT lang button
+  - `src/components/Navbar.css`: Fixed positioning, transparent→frosted glass on scroll, responsive hamburger menu, desktop/mobile layouts
+  - `src/App.jsx`: Replaced inline nav with `<Navbar />`, added section stubs with IDs (home, features, gallery, experience, location) for scroll targets
+- **Learnings for future iterations:**
+  - Components live in `src/components/`; each component has its own `.css` file imported inside the `.jsx`
+  - Navbar uses `window.scrollY > 60` to add `.navbar--scrolled` class for the frosted-glass effect
+  - Mobile hamburger at ≤768px: links panel is `position: absolute; top: 4rem` (equals navbar height) so it drops below cleanly
+  - Section IDs must match the keys in NAV_LINKS in Navbar.jsx (`home`, `features`, `gallery`, `experience`, `location`)
+  - The `<main>` sections need `id` attributes for smooth-scroll to work; hero section needs extra top padding (8rem) to account for fixed navbar height
+---
+
 ## 2026-03-04 - US-002
 - Implemented LanguageContext, useTranslation hook, and EN/IT translations
 - Files changed:
