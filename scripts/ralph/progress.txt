@@ -101,6 +101,19 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - Manual browser verification needed (no browser MCP tools available)
 ---
 
+## 2026-03-04 - US-009
+- Implemented CTA banner (turquoise bg) + Footer (deep sea bg) with full EN/IT support
+- Files changed:
+  - `src/components/Footer.jsx`: CTA banner + footer with logo, tagline, nav links, email, copyright
+  - `src/components/Footer.css`: CTA turquoise bg, button white→deep-sea hover; footer deep-sea bg, 3-col grid, white text, responsive 1-col on mobile
+  - `src/App.jsx`: added `<Footer />` after `<main>` block
+- **Learnings for future iterations:**
+  - Footer renders outside `<main>` (sibling, not child), same level as Navbar
+  - CTA banner and Footer are combined in a single component file for simplicity
+  - `BOOKING_URL` const matches Hero pattern — set to `'#'` from prd.json bookingUrl
+  - Nav link keys in Footer map to `t('nav.${key}')` using same NAV_LINKS pattern as Navbar
+---
+
 ## 2026-03-04 - US-002
 - Implemented LanguageContext, useTranslation hook, and EN/IT translations
 - Files changed:

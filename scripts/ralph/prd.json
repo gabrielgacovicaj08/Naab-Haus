@@ -130,7 +130,7 @@
         "Footer background: deep sea #1A3A4A, text white",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-010",
