@@ -39,6 +39,31 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - The `<main>` sections need `id` attributes for smooth-scroll to work; hero section needs extra top padding (8rem) to account for fixed navbar height
 ---
 
+## 2026-03-04 - US-004
+- Implemented full-viewport Hero section with Unsplash background, dark overlay, staggered fade-in animations
+- Files changed:
+  - `src/components/Hero.jsx`: Hero component using `useTranslation` for headline/subheadline/CTA, BOOKING_URL const for `href`
+  - `src/components/Hero.css`: 100vh hero, `background-image` via inline style, overlay, staggered `fadeUp` keyframe animations (0.3s / 0.6s / 0.9s delay), subtle `heroScale` on bg image
+  - `src/App.jsx`: replaced inline `#home` section with `<Hero />` import
+- **Learnings for future iterations:**
+  - Hero background image applied via inline `style={{ backgroundImage }}` on a positioned child div (not on the section itself) to allow the overlay div to layer cleanly
+  - Stagger animation: set `opacity: 0` + `transform: translateY(24px)` on element, then `animation: fadeUp 0.8s ease forwards` with incrementing delays; `forwards` fill-mode keeps final state
+  - The `heroScale` subtle zoom-out on load (scale 1.05 → 1) adds luxury feel without JS
+  - `clamp()` used for fluid font sizes: `clamp(2.25rem, 5vw, 4rem)` for headline
+---
+
+## 2026-03-04 - US-005
+- Implemented Features/highlights section with 6 feature cards, Intersection Observer fade-in, and responsive grid
+- Files changed:
+  - `src/components/Features.jsx`: reads `features.items` array from translations, renders 6 cards with emoji icon/title/desc, uses `useEffect` + `IntersectionObserver` for staggered fade-in
+  - `src/components/Features.css`: white card layout on sandy-white bg, `grid-template-columns: repeat(3,1fr)` → 2 cols at 900px → 1 col at 540px
+  - `src/App.jsx`: replaced stub `#features` section with `<Features />`
+- **Learnings for future iterations:**
+  - `t('features.items')` returns an array — translations.js supports array values, iterate with `.map()`
+  - Intersection Observer pattern: attach to `cardRefs.current[i]`, add CSS class on intersect, then `observer.disconnect()` so animation runs once; return cleanup in `useEffect`
+  - Stagger effect achieved purely via `transitionDelay` set inline before adding the visible class — no JS animation library needed
+---
+
 ## 2026-03-04 - US-002
 - Implemented LanguageContext, useTranslation hook, and EN/IT translations
 - Files changed:

@@ -58,7 +58,7 @@
         "Fade-in animation on load (headline, subheadline, CTA stagger in)",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-005",
@@ -71,7 +71,7 @@
         "Responsive: 3 cols desktop, 2 cols tablet, 1 col mobile",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-006",
