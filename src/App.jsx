@@ -3,6 +3,7 @@ import { LanguageProvider } from './context/LanguageContext'
 import { useTranslation } from './hooks/useTranslation'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Features from './components/Features'
 
 function AppContent() {
   const { t } = useTranslation()
@@ -12,9 +13,7 @@ function AppContent() {
       <Navbar />
       <main>
         <Hero />
-        <section id="features" style={{ padding: 'var(--section-padding)' }}>
-          <h2>{t('features.heading')}</h2>
-        </section>
+        <Features />
         <section id="gallery" style={{ padding: 'var(--section-padding)' }}>
           <h2>{t('gallery.heading')}</h2>
         </section>
