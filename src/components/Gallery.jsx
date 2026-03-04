@@ -4,40 +4,40 @@ import { useTranslation } from '../hooks/useTranslation'
 
 const IMAGES = [
   {
-    src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
-    alt: 'Sardinian beach with crystal clear turquoise water',
+    src: 'https://images.pexels.com/photos/364391/pexels-photo-364391.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Sardinia beach with clear sea',
   },
   {
-    src: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&q=80',
-    alt: 'Private villa pool overlooking the sea',
+    src: 'https://images.pexels.com/photos/13319488/pexels-photo-13319488.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Calm sea at dawn in Alghero, Sardinia',
   },
   {
-    src: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80',
-    alt: 'Mediterranean coastal landscape',
+    src: 'https://images.pexels.com/photos/32954604/pexels-photo-32954604.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Sardinia coastline with turquoise water',
   },
   {
-    src: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=80',
-    alt: 'Bright and airy villa bedroom',
+    src: 'https://images.pexels.com/photos/2105937/pexels-photo-2105937.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Crystal clear sea in Sardinia',
   },
   {
-    src: 'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80',
-    alt: 'Serene beach with turquoise waters',
+    src: 'https://images.pexels.com/photos/12656696/pexels-photo-12656696.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Rocky sea cave on Sardinian coast',
   },
   {
-    src: 'https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=800&q=80',
-    alt: 'Golden sunset over the Sardinian sea',
+    src: 'https://images.pexels.com/photos/20097582/pexels-photo-20097582.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Aerial drone view of turquoise coastal water',
   },
   {
-    src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-    alt: 'Luxury Mediterranean villa exterior',
+    src: 'https://images.pexels.com/photos/31817155/pexels-photo-31817155.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Luxury seaside villa with ocean view',
   },
   {
-    src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',
-    alt: 'Fully equipped modern kitchen',
+    src: 'https://images.pexels.com/photos/16327792/pexels-photo-16327792.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Turquoise sea and sandy beach',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&q=80',
-    alt: 'Aerial view of pristine Sardinian beach',
+    src: 'https://images.pexels.com/photos/248771/pexels-photo-248771.jpeg?auto=compress&cs=tinysrgb&w=800',
+    alt: 'Panoramic view of the Mediterranean sea',
   },
 ]
 

@@ -1,6 +1,19 @@
 .location {
+  position: relative;
   background: var(--color-sandy-white);
   padding: var(--section-padding);
+  padding-bottom: 10rem;
+}
+
+.location::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--color-turquoise));
+  pointer-events: none;
 }
 
 .location__inner {

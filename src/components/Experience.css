@@ -1,6 +1,7 @@
 .experience {
   background: var(--color-sandy-white);
   padding: var(--section-padding);
+  padding-bottom: 10rem;
 }
 
 .experience__inner {

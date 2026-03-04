@@ -1,6 +1,20 @@
 .gallery {
+  position: relative;
   background: var(--color-warm-sand);
   padding: var(--section-padding);
+  padding-bottom: 10rem;
+}
+
+.gallery::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--color-sandy-white));
+  pointer-events: none;
+  z-index: 1;
 }
 
 .gallery__inner {

@@ -1,6 +1,19 @@
 .features {
+  position: relative;
   padding: var(--section-padding);
+  padding-bottom: 10rem;
   background-color: var(--color-sandy-white);
+}
+
+.features::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--color-warm-sand));
+  pointer-events: none;
 }
 
 .features__inner {

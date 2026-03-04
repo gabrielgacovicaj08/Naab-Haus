@@ -3,9 +3,9 @@ import './Experience.css'
 import { useTranslation } from '../hooks/useTranslation'
 
 const IMAGES = [
-  'https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=800&q=80',
-  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
-  'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=80',
+  'https://images.pexels.com/photos/6775268/pexels-photo-6775268.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/2733955/pexels-photo-2733955.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/31934689/pexels-photo-31934689.jpeg?auto=compress&cs=tinysrgb&w=800',
 ]
 
 export default function Experience() {

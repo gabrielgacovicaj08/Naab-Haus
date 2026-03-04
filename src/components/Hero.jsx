@@ -3,7 +3,7 @@ import './Hero.css'
 import { useTranslation } from '../hooks/useTranslation'
 
 const BOOKING_URL = '#'
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80'
+const HERO_IMAGE = 'https://images.pexels.com/photos/23962081/pexels-photo-23962081.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80'
 
 export default function Hero() {
   const { t } = useTranslation()
@@ -28,6 +28,7 @@ export default function Hero() {
         />
       </div>
       <div className="hero__overlay" />
+      <div className="hero__fade-bottom" />
       <div className="hero__content">
         <h1 className="hero__headline">{t('hero.headline')}</h1>
         <p className="hero__subheadline">{t('hero.subheadline')}</p>

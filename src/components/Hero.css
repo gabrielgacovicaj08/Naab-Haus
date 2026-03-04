@@ -36,6 +36,17 @@
   background: rgba(26, 58, 74, 0.45);
 }
 
+.hero__fade-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(to bottom, transparent, var(--color-sandy-white));
+  z-index: 3;
+  pointer-events: none;
+}
+
 .hero__content {
   position: relative;
   z-index: 1;
