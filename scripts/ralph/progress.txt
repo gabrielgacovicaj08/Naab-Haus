@@ -89,6 +89,18 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - On mobile, override both `--reversed` and normal block directions to `translateY` (simpler and cleaner than horizontal slide)
 ---
 
+## 2026-03-04 - US-008
+- Implemented Location section with heading, atmospheric description, highlights list, and embedded Google Maps iframe
+- Files changed:
+  - `src/components/Location.jsx`: IntersectionObserver fade-in, highlights list from `t('location.highlights')`, Google Maps embed with Sardegna placeholder coords (41.1N, 9.5E)
+  - `src/components/Location.css`: 2-col grid (highlights + map), turquoise left-border on highlight cards, fade-in transition, responsive 1-col on mobile
+  - `src/App.jsx`: replaced inline `#location` stub with `<Location />`, removed unused `useTranslation` import
+- **Learnings for future iterations:**
+  - Google Maps embed URL pattern: `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d200000!2d{lng}!3d{lat}...` — adjust `!2d` (longitude) and `!3d` (latitude)
+  - Map iframe needs explicit `height` on its container div (not the iframe itself) + `overflow: hidden` + `border-radius` for rounded corners
+  - Manual browser verification needed (no browser MCP tools available)
+---
+
 ## 2026-03-04 - US-002
 - Implemented LanguageContext, useTranslation hook, and EN/IT translations
 - Files changed:

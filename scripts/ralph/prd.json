@@ -116,7 +116,7 @@
         "Fade-in on scroll",
         "Lint passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-009",
