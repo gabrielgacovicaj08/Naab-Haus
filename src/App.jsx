@@ -2,6 +2,7 @@ import './App.css'
 import { LanguageProvider } from './context/LanguageContext'
 import { useTranslation } from './hooks/useTranslation'
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 
 function AppContent() {
   const { t } = useTranslation()
@@ -10,10 +11,7 @@ function AppContent() {
     <>
       <Navbar />
       <main>
-        <section id="home" style={{ padding: 'var(--section-padding)', paddingTop: '8rem', textAlign: 'center' }}>
-          <h1 style={{ fontFamily: 'var(--font-heading)' }}>{t('hero.headline')}</h1>
-          <p style={{ marginTop: '1rem' }}>{t('hero.subheadline')}</p>
-        </section>
+        <Hero />
         <section id="features" style={{ padding: 'var(--section-padding)' }}>
           <h2>{t('features.heading')}</h2>
         </section>
