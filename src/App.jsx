@@ -4,6 +4,7 @@ import { useTranslation } from './hooks/useTranslation'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
+import Gallery from './components/Gallery'
 
 function AppContent() {
   const { t } = useTranslation()
@@ -14,9 +15,7 @@ function AppContent() {
       <main>
         <Hero />
         <Features />
-        <section id="gallery" style={{ padding: 'var(--section-padding)' }}>
-          <h2>{t('gallery.heading')}</h2>
-        </section>
+        <Gallery />
         <section id="experience" style={{ padding: 'var(--section-padding)' }}>
           <h2>{t('experience.heading')}</h2>
         </section>
