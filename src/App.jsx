@@ -6,6 +6,7 @@ import Features from './components/Features'
 import Gallery from './components/Gallery'
 import Experience from './components/Experience'
 import Location from './components/Location'
+import Footer from './components/Footer'
 
 function AppContent() {
   return (
@@ -18,6 +19,7 @@ function AppContent() {
         <Experience />
         <Location />
       </main>
+      <Footer />
     </>
   )
 }
