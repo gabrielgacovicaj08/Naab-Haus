@@ -77,6 +77,18 @@ Started: Tue Mar  3 15:47:03 CST 2026
   - Background manual browser verification needed (no browser MCP tools available)
 ---
 
+## 2026-03-04 - US-007
+- Implemented Experience/lifestyle section with 3 alternating image+text blocks, slide-in scroll animations, and responsive layout
+- Files changed:
+  - `src/components/Experience.jsx`: 3 blocks from `t('experience.blocks')`, IntersectionObserver per block adds `--visible` class, alternating layout via `reversed` class on odd indices
+  - `src/components/Experience.css`: CSS grid 2-col layout, image slides from left + text from right (reversed for block 2), opacity 0→1 on visible; mobile collapses to 1 col with translateY animation
+  - `src/App.jsx`: replaced `#experience` stub section with `<Experience />`
+- **Learnings for future iterations:**
+  - Alternating layout: use `i % 2 === 1` to add `--reversed` modifier; in CSS swap `order` property and `transform` direction
+  - Slide-in pattern: set initial `opacity: 0; transform: translateX(±60px)` on children, add `transition`, then JS adds `--visible` class via IntersectionObserver — parent tracks overall `opacity` for the block wrapper
+  - On mobile, override both `--reversed` and normal block directions to `translateY` (simpler and cleaner than horizontal slide)
+---
+
 ## 2026-03-04 - US-002
 - Implemented LanguageContext, useTranslation hook, and EN/IT translations
 - Files changed:
