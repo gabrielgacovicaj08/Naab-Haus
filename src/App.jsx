@@ -1,27 +1,33 @@
 import './App.css'
 import { LanguageProvider } from './context/LanguageContext'
 import { useTranslation } from './hooks/useTranslation'
+import Navbar from './components/Navbar'
 
 function AppContent() {
-  const { t, lang, toggleLang } = useTranslation()
+  const { t } = useTranslation()
 
   return (
-    <main>
-      <nav style={{ display: 'flex', justifyContent: 'space-between', padding: '1rem 2rem', background: 'var(--color-deep-sea)', color: '#fff' }}>
-        <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem' }}>NaabHaus</span>
-        <button
-          onClick={toggleLang}
-          style={{ background: 'none', border: '1px solid #fff', color: '#fff', padding: '0.25rem 0.75rem', cursor: 'pointer', borderRadius: '4px', fontFamily: 'var(--font-body)' }}
-          aria-label="Toggle language"
-        >
-          {lang === 'en' ? 'IT' : 'EN'}
-        </button>
-      </nav>
-      <section style={{ padding: 'var(--section-padding)', textAlign: 'center' }}>
-        <h1 style={{ fontFamily: 'var(--font-heading)' }}>{t('hero.headline')}</h1>
-        <p>{t('hero.subheadline')}</p>
-      </section>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <section id="home" style={{ padding: 'var(--section-padding)', paddingTop: '8rem', textAlign: 'center' }}>
+          <h1 style={{ fontFamily: 'var(--font-heading)' }}>{t('hero.headline')}</h1>
+          <p style={{ marginTop: '1rem' }}>{t('hero.subheadline')}</p>
+        </section>
+        <section id="features" style={{ padding: 'var(--section-padding)' }}>
+          <h2>{t('features.heading')}</h2>
+        </section>
+        <section id="gallery" style={{ padding: 'var(--section-padding)' }}>
+          <h2>{t('gallery.heading')}</h2>
+        </section>
+        <section id="experience" style={{ padding: 'var(--section-padding)' }}>
+          <h2>{t('experience.heading')}</h2>
+        </section>
+        <section id="location" style={{ padding: 'var(--section-padding)' }}>
+          <h2>{t('location.heading')}</h2>
+        </section>
+      </main>
+    </>
   )
 }
 
