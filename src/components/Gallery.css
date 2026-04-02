@@ -2,6 +2,18 @@
   background: var(--color-warm-sand);
   padding: var(--section-padding);
   padding-bottom: 8rem;
+  position: relative;
+}
+
+.gallery::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--color-sandy-white));
+  pointer-events: none;
 }
 
 .gallery__inner {
