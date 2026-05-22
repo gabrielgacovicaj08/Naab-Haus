@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from '../hooks/useTranslation'
+import { NAV_LINKS } from '../constants/navLinks'
 import './Navbar.css'
-
-const NAV_LINKS = [
-  { key: 'home', id: 'home' },
-  { key: 'features', id: 'features' },
-  { key: 'gallery', id: 'gallery' },
-  { key: 'experience', id: 'experience' },
-  { key: 'location', id: 'location' },
-]
 
 function Navbar() {
   const { t, lang, toggleLang } = useTranslation()
@@ -22,8 +15,7 @@ function Navbar() {
   }, [])
 
   const scrollToSection = (id) => {
-    const el = document.getElementById(id)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     setMenuOpen(false)
   }
 

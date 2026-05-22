@@ -1,15 +1,8 @@
 import { useTranslation } from '../hooks/useTranslation'
+import { NAV_LINKS } from '../constants/navLinks'
 import './Footer.css'
 
 const BOOKING_URL = '#'
-
-const NAV_LINKS = [
-  { key: 'home', href: '#home' },
-  { key: 'features', href: '#features' },
-  { key: 'gallery', href: '#gallery' },
-  { key: 'experience', href: '#experience' },
-  { key: 'location', href: '#location' },
-]
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -33,9 +26,9 @@ export default function Footer() {
           <div className="footer__links">
             <h3 className="footer__links-heading">{t('footer.links')}</h3>
             <ul>
-              {NAV_LINKS.map(({ key, href }) => (
+              {NAV_LINKS.map(({ key, id }) => (
                 <li key={key}>
-                  <a href={href}>{t(`nav.${key}`)}</a>
+                  <a href={`#${id}`}>{t(`nav.${key}`)}</a>
                 </li>
               ))}
             </ul>

@@ -199,10 +199,7 @@
     display: flex;
   }
 
-  /* Hide desktop lang toggle on mobile */
-  .navbar__actions .navbar__lang:not(.navbar__lang--mobile) {
-    display: none;
-  }
+  /* Keep lang toggle visible in the actions bar on mobile */
 
   /* Dropdown menu */
   .navbar__links {
@@ -245,15 +242,6 @@
   }
 
   .navbar__lang--mobile {
-    display: flex;
-    margin: 0 2rem 0.5rem;
-    border-color: var(--color-deep-sea);
-    color: var(--color-deep-sea);
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .navbar__lang--mobile:hover {
-    background: rgba(26, 58, 74, 0.06);
+    display: none;
   }
 }

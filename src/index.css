@@ -3,15 +3,15 @@
    ============================================================ */
 :root {
   /* Color palette */
-  --color-sandy-white: #FAF7F2;
-  --color-turquoise: #4ECDC4;
-  --color-warm-sand: #E8D5B7;
-  --color-deep-sea: #1A3A4A;
-  --color-soft-stone: #8B7355;
+  --color-sandy-white: #faf7f2;
+  --color-turquoise: #4ecdc4;
+  --color-warm-sand: #e8d5b7;
+  --color-deep-sea: #1a3a4a;
+  --color-soft-stone: #8b7355;
 
   /* Typography */
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
 
   /* Spacing */
   --section-padding: 6rem 2rem;
@@ -66,4 +66,39 @@ a {
 button {
   font-family: var(--font-body);
   cursor: pointer;
+}
+
+/* ============================================================
+   Italian hover tooltip (shows English translation)
+   Usage: <span data-tooltip="English text">Testo italiano</span>
+   ============================================================ */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dashed rgba(26, 58, 74, 0.35);
+  display: inline;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(26, 58, 74, 0.94);
+  color: #fff;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 200;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
 }

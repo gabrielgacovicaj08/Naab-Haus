@@ -6,6 +6,8 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Gallery from './components/Gallery'
 import Experience from './components/Experience'
+import Services from './components/Services'
+import Itinerary from './components/Itinerary'
 import Location from './components/Location'
 import Footer from './components/Footer'
 
@@ -19,6 +21,8 @@ function AppContent() {
         <Features />
         <Gallery />
         <Experience />
+        <Services />
+        <Itinerary />
         <Location />
       </main>
       <Footer />

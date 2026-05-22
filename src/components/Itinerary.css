@@ -1,0 +1,131 @@
+.itinerary {
+  background: var(--color-sandy-white);
+  padding: var(--section-padding);
+}
+
+.itinerary__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.itinerary__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  color: var(--color-deep-sea);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.itinerary__subheading {
+  text-align: center;
+  color: var(--color-soft-stone);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Tabs */
+.itinerary__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.itinerary__tab {
+  padding: 0.55rem 1.75rem;
+  border: 2px solid var(--color-turquoise);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--color-deep-sea);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.itinerary__tab:hover {
+  background: rgba(78, 205, 196, 0.12);
+}
+
+.itinerary__tab--active {
+  background: var(--color-turquoise);
+  color: #fff;
+}
+
+/* Day plan */
+.itinerary__plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.itinerary__day {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(26, 58, 74, 0.1);
+  align-items: start;
+}
+
+.itinerary__day:last-child {
+  border-bottom: none;
+}
+
+.itinerary__day-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.itinerary__day-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-turquoise);
+}
+
+.itinerary__day-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--color-deep-sea);
+  line-height: 1.3;
+}
+
+.itinerary__day-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itinerary__day-item {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--color-soft-stone);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.itinerary__day-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-turquoise);
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .itinerary__day {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    padding: 1.25rem 0;
+  }
+}

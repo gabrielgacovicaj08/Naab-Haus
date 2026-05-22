@@ -4,7 +4,7 @@
   background-color: var(--color-turquoise);
   color: #fff;
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 6rem 2rem 12rem;
 }
 
 .cta-banner::after {
@@ -17,6 +17,7 @@
   background: linear-gradient(to bottom, transparent, var(--color-deep-sea));
   pointer-events: none;
 }
+
 
 .cta-banner__heading {
   font-family: var(--font-heading);

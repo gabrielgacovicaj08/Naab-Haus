@@ -1,30 +1,12 @@
-import { useEffect, useRef } from 'react'
-import './Features.css'
+import { useStaggeredReveal } from '../hooks/useReveal'
 import { useTranslation } from '../hooks/useTranslation'
+import './Features.css'
 
 export default function Features() {
-  const { t } = useTranslation()
+  const { t, te, lang } = useTranslation()
   const items = t('features.items')
-  const cardRefs = useRef([])
-
-  useEffect(() => {
-    const observers = cardRefs.current.map((card, i) => {
-      if (!card) return null
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            card.style.transitionDelay = `${i * 0.1}s`
-            card.classList.add('features__card--visible')
-            observer.disconnect()
-          }
-        },
-        { threshold: 0.15 }
-      )
-      observer.observe(card)
-      return observer
-    })
-    return () => observers.forEach((obs) => obs && obs.disconnect())
-  }, [items])
+  const itemsEn = lang === 'it' ? te('features.items') : null
+  const cardRefs = useStaggeredReveal('features__card--visible', { stagger: 0.1 })
 
   return (
     <section id="features" className="features">
@@ -38,7 +20,12 @@ export default function Features() {
               ref={(el) => { cardRefs.current[i] = el }}
             >
               <span className="features__icon">{item.icon}</span>
-              <h3 className="features__title">{item.title}</h3>
+              <h3
+                className="features__title"
+                {...(itemsEn ? { 'data-tooltip': itemsEn[i].title } : {})}
+              >
+                {item.title}
+              </h3>
               <p className="features__desc">{item.description}</p>
             </div>
           ))}

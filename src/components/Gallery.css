@@ -1,8 +1,8 @@
 .gallery {
+  position: relative;
   background: var(--color-warm-sand);
   padding: var(--section-padding);
-  padding-bottom: 8rem;
-  position: relative;
+  padding-bottom: 12rem;
 }
 
 .gallery::after {
